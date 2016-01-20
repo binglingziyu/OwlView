@@ -113,9 +113,8 @@
     <com.ihubin.login.loginpage.OwlView
         android:id="@+id/owl_view"
         android:layout_above="@id/ll_login_pane"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:translationY="9dp"
+        android:layout_width="175dp"
+        android:layout_height="107dp"
         android:layout_centerHorizontal="true"/>
 
 
