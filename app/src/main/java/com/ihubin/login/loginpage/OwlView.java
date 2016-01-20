@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- *
+ * 这个改成View比较好,有时间改改
  */
 public class OwlView extends FrameLayout{
 
