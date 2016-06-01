@@ -4,8 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eeeeee"
-    android:clipChildren="false"
-    android:clipToPadding="false"
     tools:context="com.ihubin.login.loginpage.MainActivity">
 
     <LinearLayout
@@ -21,48 +19,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_register_pane"
-        android:layout_width="350dp"
+        android:id="@+id/ll_login_pane"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_centerInParent="true"
         android:orientation="vertical"
         android:background="@mipmap/round_corner_bg">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:textSize="16sp"
-            android:textColor="#999999"
-            android:text="Registration"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="8dp"
-            android:background="#f2f2f2"/>
-
-        <EditText
-            android:id="@+id/fullname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="8dp"
-            android:minHeight="45dp"
-            android:drawableLeft="@android:drawable/ic_menu_add"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
-            android:hint="Fullname"
-            android:inputType="none"
-            android:singleLine="true"
-            android:textSize="16sp"
-            android:background="@drawable/selector_edittext_bg"/>
 
         <EditText
             android:id="@+id/email"
@@ -72,7 +36,6 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
             android:minHeight="45dp"
-            android:inputType="none"
             android:drawableLeft="@android:drawable/sym_action_email"
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
@@ -92,22 +55,67 @@
             android:minHeight="45dp"
             android:drawableLeft="@android:drawable/ic_lock_idle_lock"
             android:drawablePadding="5dp"
-            android:inputType="none"
             android:gravity="center_vertical"
             android:hint="Password"
             android:singleLine="true"
             android:textSize="16sp"
             android:background="@drawable/selector_edittext_bg"/>
 
-    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f3f3f3"/>
 
-    <com.ihubin.login.loginpage.OwlView2
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#f7f7f7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:text="Forgot password?"
+                android:textSize="14sp"
+                android:textColor="#999999"/>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:padding="8dp"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="Login"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:background="@mipmap/login_btn_bg"/>
+
+            <TextView
+                android:layout_toLeftOf="@id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:text="Sign Up"
+                android:textSize="14sp"
+                android:textColor="#999999"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    
+    <com.ihubin.login.loginpage.OwlView
         android:id="@+id/owl_view"
-        android:layout_toRightOf="@id/ll_register_pane"
-        android:layout_centerVertical="true"
-        android:translationX="-20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_above="@id/ll_login_pane"
+        android:layout_width="175dp"
+        android:layout_height="107dp"
+        android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.ihubin.login.loginpage;
 
+import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,6 +15,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.animation.AnimationSet;
 import android.view.animation.LinearInterpolator;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
