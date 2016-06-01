@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PaintFlagsDrawFilter;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 public class OwlView2 extends View implements View.OnFocusChangeListener{
 
     private Paint mPaint;
+    private PaintFlagsDrawFilter paintFlagsDrawFilter;
 
     private Bitmap eyeLeftBitmap;
     private Bitmap eyeRightBitmap;
@@ -65,6 +67,8 @@ public class OwlView2 extends View implements View.OnFocusChangeListener{
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setAntiAlias(true);
 
+        paintFlagsDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG|Paint.FILTER_BITMAP_FLAG);
+
         bodyMatrix = new Matrix();
         armMatrix = new Matrix();
         eyeLeftMatrix = new Matrix();
@@ -85,6 +89,7 @@ public class OwlView2 extends View implements View.OnFocusChangeListener{
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.setDrawFilter(paintFlagsDrawFilter);
         canvas.drawBitmap(footBitmap,dip2px(60),dip2px(230),mPaint);
 
         armMatrix.reset();
